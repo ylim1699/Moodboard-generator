@@ -31,3 +31,26 @@ export async function loadHeaderFooter() {
     renderTemplate(headerTemplate, headerElement);
     renderTemplate(footerTemplate, footerElement);
 }
+
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+}
+
+// local storage
+export function setLocalStorage(key, value) {
+    localStorage.setItem(key, value)
+}
+
+export function getLocalStorage(key) {
+    localStorage.getItem(key);
+}
+
+export function removeFromLocalStorage(key) {
+    localStorage.removeItem(key);
+}
+
+export function clearLocalStorage() {
+    localStorage.clear();
+}
