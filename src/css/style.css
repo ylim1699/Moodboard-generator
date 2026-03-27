@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
-  
+  --main-font: "Cinzel Decorative", serif;
+  --secondary-font: "Crimson Pro", serif;
 }
 
 .header-wrapper {
@@ -7,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 3%;
+    font-family: var(--main-font)
 }
 
 .logo-container img {
@@ -19,14 +24,24 @@ label {
     font-size: 1.25rem;
 }
 
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 #search {
     font-size: 15px;
     height: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .search-button {
     cursor: pointer !important;
+    border-radius: 8px;
+    width: 80px;
+    height: 30px;
 }
 
 #search:hover {
