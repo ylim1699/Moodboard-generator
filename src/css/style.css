@@ -1,22 +1,46 @@
+/* global */
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root {
-  --main-font: "Cinzel Decorative", serif;
-  --secondary-font: "Crimson Pro", serif;
+  --main-font: "Crimson Pro", serif;
 }
+
+* {
+    font-family: var(--main-font)
+}
+
+/* header */
 
 .header-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3%;
-    font-family: var(--main-font)
 }
 
 .logo-container img {
     width: 200px;
     height: auto;
+}
+
+.login-btn {
+    margin-bottom: 55px;
+    background-color: white;
+    border-radius: 8px;
+    width: 60px;
+    height: 25px;
+    border: none;
+    background-color: rgb(128, 144, 170);
+    border-width: 3px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 3px 5px rgb(192, 192, 192);
+}
+
+.login-btn:hover {
+    background-color: rgb(100, 118, 146);
 }
 
 label {
@@ -35,6 +59,12 @@ label {
     font-size: 15px;
     height: 20px;
     border-radius: 8px;
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 1px 3px 5px rgb(192, 192, 192);
+}
+
+#search:hover {
+    background-color: rgb(241, 241, 241);
 }
 
 .search-button {
@@ -42,11 +72,16 @@ label {
     border-radius: 8px;
     width: 80px;
     height: 30px;
+    background-color: white;
+    border-color: rgb(189, 205, 231);
+    border-width: 5px;
 }
 
-#search:hover {
-    background-color: rgb(236, 236, 236);
+.search-button:hover {
+    border-color: rgb(172, 187, 212);
 }
+
+/* Main */
 
 .image-container {
     display: flex;
@@ -63,4 +98,12 @@ label {
 
 .image-container img:hover {
     transform: scale(1.025);
+}
+
+/* footer */
+
+.main-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
 }
