@@ -1,5 +1,4 @@
 /* global */
-
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
@@ -25,6 +24,7 @@
     border-radius: 100px;
     box-shadow: 1px 5px 8px black;
     margin-top: 25%;
+    animation: floatShadow 5s ease-in-out infinite;
 }
 
 /* Main */
@@ -47,8 +47,9 @@ main {
     margin-top: 5%;
 }
 
-.login-page-btn {
-    margin-bottom: 55px;
+.login-page-btn,
+.logout-btn {
+    margin-bottom: 4%;
     background-color: white;
     border-radius: 8px;
     width: 60px;
@@ -61,13 +62,15 @@ main {
     box-shadow: 1px 3px 5px rgb(192, 192, 192);
 }
 
-.login-btn:hover {
+.login-btn:hover, 
+.login-page-btn:hover,
+.logout-btn:hover {
     background-color: rgb(100, 118, 146);
 }
 
 label {
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .search-form {
@@ -111,20 +114,20 @@ label {
     gap: 15px;
 }
 
-.image-container img {
+.defaultTemplate img {
     width: 400px;
-    height: 300px;
+    height: auto;
     object-fit: fill;
     border-radius: 8px;
     transition:  transform 0.25s;
 }
 
-.image-container img:hover {
+.defaultTemplate img:hover {
     transform: scale(1.025);
 }
 
 .login-form {
-    margin-top: 5%;
+    margin-top: 4%;
     border-radius: 5px;
     border: 1px dashed rgb(184, 184, 184);
 }
@@ -149,6 +152,10 @@ label {
     box-shadow: 1px 3px 5px rgb(192, 192, 192);
 }
 
+.hide {
+    display: none !important;
+}
+
 #email,
 #password {
     border-radius: 5px;
@@ -158,10 +165,127 @@ label {
     box-shadow: 1px 5px 8px rgb(219, 219, 219);
 }
 
+.template-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5%;
+}
+
+#template-select {
+    border-radius: 5px;
+    width: 75px;
+    border: 1px solid rgb(238, 238, 238);
+    box-shadow: 1px 5px 8px rgb(219, 219, 219);
+    cursor: pointer;
+}
+
+.template1 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.template3 {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "BIG BIG a b"
+        "c d BIG2 BIG2"
+        "BIG3 BIG3 e f";
+    gap: 10px;
+}
+
+.template3 div:nth-child(1) {
+    grid-area: BIG;
+}
+
+.template3 div:nth-child(2) {
+    grid-area: BIG2;
+}
+
+.template3 div:nth-child(3) {
+    grid-area: BIG3;
+}
+
+.template2 {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.75fr 1.75fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "a b BIG BIG"
+        "c d BIG2 BIG2"
+        "e f BIG3 BIG3 ";
+    gap: 10px;
+}
+
+/* big image in top-right spans both rows */
+.template2 div:last-child {
+    grid-area: BIG;
+}
+
+.template2 div:nth-child(8) {
+    grid-area: BIG2;
+}
+
+.template2 div:nth-child(7) {
+    grid-area: BIG3;
+}
+
+.template1 div,
+.template2 div,
+.template3 div  {
+    overflow: hidden;
+    height: 300px; /* consistent row height */
+}
+
+.template1 img,
+.template2 img,
+.template3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.template1,
+.template2,
+.template3 {
+    padding: 10px;
+    background-color: black;
+}
+
 /* footer */
 
 .main-footer {
     display: flex;
     justify-content: center;
     margin-top: 5%;
+}
+
+@keyframes floatShadow {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 15px rgba(1, 57, 131, 0.1);
+    }
+    50% {
+        transform: translateY(0px);
+        box-shadow: 0 20px 30px rgba(38, 85, 148, 0.2); /* Shadow moves down and blurs */
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 15px rgba(1, 57, 131, 0.1);
+    }
 }

@@ -3,8 +3,7 @@ async function loadTemplate(filePath) {
     if (response.ok) {
         const html = await response.text();
         return html;
-    }
-        
+    }   
 }
 
 export function renderTemplate(
@@ -44,7 +43,7 @@ export function setLocalStorage(key, value) {
 }
 
 export function getLocalStorage(key) {
-    localStorage.getItem(key);
+    return localStorage.getItem(key);
 }
 
 export function removeFromLocalStorage(key) {

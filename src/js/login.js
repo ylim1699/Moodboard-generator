@@ -1,15 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import { setLocalStorage } from "./utils.mjs";
-
-
-function handleLogin(email, password) {
-    if (email === 'test@gmail.com' && password === 'test1234') {
-        setLocalStorage('isAuthed', 'true');
-        showHTML();
-    } else {
-        window.location.href = '/login/index.html'
-    }
-}
+import { handleLogout, handleLogin, isAuthed } from "./auth.mjs";
 
 document.querySelector(".login-btn").addEventListener("click", (e) => {
     e.preventDefault();
@@ -20,7 +10,6 @@ document.querySelector(".login-btn").addEventListener("click", (e) => {
     handleLogin(email, password);
 });
 
-function showHTML() {
-    console.log('logged in!');
-}
+handleLogout();
 loadHeaderFooter();
+isAuthed();

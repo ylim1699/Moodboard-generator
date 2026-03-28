@@ -11,29 +11,35 @@
     <header class="main-header">
     </header>
     <main>
-        <fieldset class="login-form">
-            <legend>Login</legend>
-            <p>
-                <label for="email">Email</label>
-                <input 
+        <form>
+            <fieldset class="login-form">
+                <legend>Login</legend>
+                <p>
+                    <label for="email">Email</label>
+                    <input 
                     type="text"
                     placeholder="email"
                     id="email"
-                >
-            </p>
-            <p>
-                <label for="password">Password</label>
-                <input 
+                    value="test@gmail.com"
+                    >
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input 
                     type="password"
                     placeholder="password"
                     id="password"
-                >
-            </p>
-            <button class="login-btn">
-                Login
-            </button>
-        </fieldset>
-    </main>
+                    >
+                </p>
+                <button class="login-btn">
+                    Login
+                </button>
+                <button class="logout-btn hide">
+                    Logout
+                </button>
+            </fieldset>
+        </form>
+        </main>
     <footer class="main-footer">
     </footer>
 </body>

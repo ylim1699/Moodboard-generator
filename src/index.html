@@ -18,12 +18,27 @@
           <button class="login-page-btn" onclick="window.location.href='/login/index.html'">
             Log In
           </button>
+          <button class="logout-btn hide">
+            Log out
+          </button>
         </div>
+
         <form class="search-form">
           <input type="text" id="search" name="search" placeholder="e.g. minimalist.." />
           <button class="search-button" type="submit">Search</button>
         </form>
-        <div class="image-container">
+
+        <form class="template-form">
+          <label for="template-select">Choose Style:</label>
+          <select id="template-select">
+            <option value="#">Select</option>
+            <option value="1">Grid 1</option>
+            <option value="2">Grid 2</option>
+            <option value="3">Grid 3</option>
+          </select>
+        </form>
+
+        <div class="image-container hide defaultTemplate">
           
         </div>
       </main>
