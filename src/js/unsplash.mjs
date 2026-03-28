@@ -68,7 +68,7 @@ const select = document.querySelector("#template-select");
 
 select.addEventListener('change', (e) => {
     const style = e.target.value;
-    console.log(style);
+    console.log(`grid: ${style}`);
 
     if(style === "1") {
         document.querySelector(".image-container")?.classList.remove("template1", "template2", "template3", "defaultTemplate");
