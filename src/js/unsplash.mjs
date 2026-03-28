@@ -10,22 +10,22 @@ document.querySelector(".search-form").addEventListener("submit", (e) => {
 async function fetchImage(query = "nature") {
     console.log(query);
     
-    const numCheck = await fetch(
+    const totalPagesCheck = await fetch(
         `${UNSPLASH_API_URL}search/photos?query=${encodeURIComponent(query)}&client_id=${UNSPLASH_ACCESS_KEY}`
     );
     
-    let numData = await numCheck.json();
-    const pages = numData.total_pages;
+    let numData = await totalPagesCheck.json();
+    const totalPages = numData.total_pages;
     
     function limitPage() {
-        if (Number(pages) > 10) {
+        if (Number(totalPages) > 10) {
             let newPages = '10';
             const randomPage = Math.floor(Math.random() * Number(newPages) + 1);
             console.log(newPages);
             return randomPage
         } else {
-            console.log(pages);
-            const randomPage = Math.floor(Math.random() * Number(pages) + 1);
+            console.log(totalPages);
+            const randomPage = Math.floor(Math.random() * Number(totalPages) + 1);
             return randomPage;
         }
     }
