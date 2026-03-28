@@ -8,6 +8,7 @@ document.querySelector(".search-form").addEventListener("submit", (e) => {
 });
 
 async function fetchImage(query = "nature") {
+    console.log(query);
     
     const numCheck = await fetch(
         `${UNSPLASH_API_URL}search/photos?query=${encodeURIComponent(query)}&client_id=${UNSPLASH_ACCESS_KEY}`
@@ -16,9 +17,21 @@ async function fetchImage(query = "nature") {
     let numData = await numCheck.json();
     const pages = numData.total_pages;
     
-    const randomPage = Math.floor(Math.random() * Number(pages) + 1);
+    function limitPage() {
+        if (Number(pages) > 10) {
+            let newPages = '10';
+            const randomPage = Math.floor(Math.random() * Number(newPages) + 1);
+            console.log(newPages);
+            return randomPage
+        } else {
+            console.log(pages);
+            const randomPage = Math.floor(Math.random() * Number(pages) + 1);
+            return randomPage;
+        }
+    }
+    
     const response = await fetch(
-        `${UNSPLASH_API_URL}search/photos?query=${encodeURIComponent(query)}&per_page=9&page=${randomPage}&client_id=${UNSPLASH_ACCESS_KEY}`
+        `${UNSPLASH_API_URL}search/photos?query=${encodeURIComponent(query)}&per_page=9&page=${limitPage()}&client_id=${UNSPLASH_ACCESS_KEY}`
     );
 
     let data = await response.json();
