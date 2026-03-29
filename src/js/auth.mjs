@@ -54,7 +54,7 @@ function showHTML(yes) {
         document.querySelector('.login-page-btn')?.classList.remove('hide');
         document.querySelector('.login-btn')?.classList.remove('hide');
         document.querySelector('.search-form').classList.add('hide');
-        document.querySelector('.fontsContainer').classList.add('hide');
+        document.querySelector('.fontsForm').classList.add('hide');
         console.log('logged out');
     }
 }
