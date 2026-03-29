@@ -1,3 +1,7 @@
+// thief.getPalette(sourceImage, colorCount, quality (1high-50low))
+const thief = new ColorThief();
+// const extractColor = thief.getPalette()
+
 const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_API_KEY;
 const UNSPLASH_API_URL = 'https://api.unsplash.com/'
 
@@ -51,6 +55,7 @@ async function displayImage(query) {
 
     if(imageContainer) {
         imageContainer.innerHTML="";
+        // const extractColor = thief.getPalette()
     }
     
     imageData.map(image => {
@@ -84,3 +89,4 @@ select.addEventListener('change', (e) => {
         document.querySelector(".image-container")?.classList.add(`defaultTemplate`);
     }
 })
+

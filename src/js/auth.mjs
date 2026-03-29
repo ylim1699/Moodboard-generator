@@ -43,6 +43,7 @@ function showHTML(yes) {
         document.querySelector('.login-page-btn')?.classList.add('hide');
         document.querySelector('.login-btn')?.classList.add('hide');
         document.querySelector('.search-form').classList.remove('hide');
+        document.querySelector('.fontsForm').classList.remove('hide');
 
         console.log('logged in');
     } else {
@@ -53,6 +54,7 @@ function showHTML(yes) {
         document.querySelector('.login-page-btn')?.classList.remove('hide');
         document.querySelector('.login-btn')?.classList.remove('hide');
         document.querySelector('.search-form').classList.add('hide');
+        document.querySelector('.fontsContainer').classList.add('hide');
         console.log('logged out');
     }
 }
