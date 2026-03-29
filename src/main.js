@@ -1,12 +1,13 @@
 import { loadHeaderFooter} from './js/utils.mjs';
-import { renderImage } from './js/unsplash.mjs';
+import { renderImage, getSearchValue } from './js/unsplash.mjs';
 import { handleLogout, isAuthed } from "./js/auth.mjs";
-import { displayFonts } from './js/fonts.mjs';
+import { getFonts } from './js/fonts.mjs';
 
 document.querySelector("#fontCheck").addEventListener("change", (e) => {
     e.preventDefault();
     if (e.target.checked) {
-        displayFonts("minimalist");
+        console.log(`getQuery value: ${getSearchValue()}`);
+        getFonts(getSearchValue());
     } else {
         const fontsContainer = document.querySelector(".fontsContainer");
         fontsContainer.innerHTML = "";

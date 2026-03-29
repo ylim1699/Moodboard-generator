@@ -270,8 +270,14 @@ label {
 
 .fontsForm {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 5%;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+.fontsForm label {
+    margin-bottom: 2%;
 }
 
 .getFont-btn {
@@ -285,6 +291,13 @@ label {
     color: black;
     cursor: pointer;
     box-shadow: 1px 3px 5px rgb(192, 192, 192);
+}
+
+.fontsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 2%;
 }
 
 /* footer */

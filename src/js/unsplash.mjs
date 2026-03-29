@@ -1,16 +1,19 @@
-// thief.getPalette(sourceImage, colorCount, quality (1high-50low))
-const thief = new ColorThief();
-// const extractColor = thief.getPalette()
-
 const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_API_KEY;
 const UNSPLASH_API_URL = 'https://api.unsplash.com/'
+
+let searchValue;
 
 document.querySelector(".search-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const query = document.querySelector("#search").value.trim();
     renderImage(query);
+    searchValue = query;
 });
 
+export function getSearchValue() {
+    return searchValue;
+}
+    
 async function fetchImage(query = "nature") {
     console.log(query);
     
@@ -45,7 +48,7 @@ async function fetchImage(query = "nature") {
 
 export function imageTemplate(imageData) {
     return `<div>
-        <img src="${imageData.urls.regular}" alt="${imageData.alt_description}">
+            <img src="${imageData.urls.regular}" alt="${imageData.alt_description}">
         </div>`
 }
 
@@ -55,7 +58,6 @@ async function displayImage(query) {
 
     if(imageContainer) {
         imageContainer.innerHTML="";
-        // const extractColor = thief.getPalette()
     }
     
     imageData.map(image => {

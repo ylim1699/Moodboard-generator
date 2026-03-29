@@ -46,10 +46,3 @@ export function getLocalStorage(key) {
     return localStorage.getItem(key);
 }
 
-export function removeFromLocalStorage(key) {
-    localStorage.removeItem(key);
-}
-
-export function clearLocalStorage() {
-    localStorage.clear();
-}

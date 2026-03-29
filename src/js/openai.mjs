@@ -4,7 +4,7 @@ const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export async function geminiAI(userInput) {
   const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-2.5-flash",
     contents: [
       {
         role: "user",
@@ -18,7 +18,5 @@ export async function geminiAI(userInput) {
       }
     ]
   });
-
-  console.log(response.text);
   return response.text;
 }
